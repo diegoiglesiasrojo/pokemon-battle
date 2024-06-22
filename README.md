@@ -48,7 +48,7 @@ NodeJS v22.2.0 or later
 - Authentication not required
 
 - Body must be:
-  {}
+  {name: "Pikachu", attack: 4}
 
 - Recieve:
   {success: true, error: null, response: ""}
@@ -88,7 +88,7 @@ NodeJS v22.2.0 or later
 - Authentication not required
 
 - Body must be:
-  {}
+  {firstPokemon: "Pikachu", secondPokemon: "Eevee"}
 
 - Recieve:
   {success: true, error: null, response: ""}
@@ -107,6 +107,8 @@ NodeJS v22.2.0 or later
   {success: true, error: null, response: ""}
 
 ## Versions:
+
+- v0.5.1 | Created battle validator.
 
 - v0.5.0 | Created battle model.
 

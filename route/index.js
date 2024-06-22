@@ -4,6 +4,7 @@ const constants = require("../constants");
 const pokemonControllers = require("../controllers/pokemonControllers.js");
 const battleControllers = require("../controllers/battleControllers.js");
 const pokemonValidator = require("../controllers/pokemonValidator.js");
+const battleValidator = require("../controllers/battleValidator.js");
 
 router
   .route(constants.routes.pokemon)
@@ -14,7 +15,7 @@ router
 
 router
   .route(constants.routes.battle)
-  .post(battleControllers.createBattle)
+  .post(battleValidator, battleControllers.createBattle)
   .get(battleControllers.readBattleList);
 
 module.exports = router;
