@@ -9,9 +9,12 @@ const battleValidator = require("../controllers/battleValidator.js");
 router
   .route(constants.routes.pokemon)
   .post(pokemonValidator, pokemonControllers.createPokemon)
-  .put(pokemonControllers.updatePokemon)
   .delete(pokemonControllers.deletePokemon)
   .get(pokemonControllers.readPokemonList);
+
+router
+  .route(constants.routes.updatePokemon)
+  .put(pokemonControllers.updatePokemon);
 
 router
   .route(constants.routes.battle)

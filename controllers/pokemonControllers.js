@@ -55,13 +55,37 @@ const pokemonControllers = {
         })
       );
   },
+
   updatePokemon: (req, res) => {
-    res.json({
-      success: true,
-      error: null,
-      response: "updatePokemon",
-    });
+    const body = { ...req.body };
+    if (body.name) {
+      const nameCapitalized =
+        body.name.toLowerCase().charAt(0).toUpperCase() +
+        body.name.toLowerCase().slice(1);
+      body.name = nameCapitalized;
+    }
+
+    if (body.type) {
+      const typeCapitalized =
+        body.type.toLowerCase().charAt(0).toUpperCase() +
+        body.type.toLowerCase().slice(1);
+      body.type = typeCapitalized;
+    }
+
+    Pokemon.findOneAndUpdate({ _id: req.params.id }, { ...body })
+      .then(() => {
+        res.json({
+          success: true,
+          error: null,
+        });
+      })
+      .catch(() => {
+        res
+          .status(constants.status.internalServerError)
+          .json({ success: false, error: constants.errors.generalError });
+      });
   },
+
   deletePokemon: (req, res) => {
     res.json({
       success: true,
@@ -69,6 +93,7 @@ const pokemonControllers = {
       response: "deletePokemon",
     });
   },
+
   readPokemonList: (req, res) => {
     res.json({
       success: true,

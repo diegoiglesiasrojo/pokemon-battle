@@ -9,6 +9,7 @@ const constants = {
   },
   routes: {
     pokemon: "/pokemon",
+    updatePokemon: "/updatepokemon/:id",
     battle: "/battle",
   },
   validations: {
