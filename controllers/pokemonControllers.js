@@ -87,11 +87,18 @@ const pokemonControllers = {
   },
 
   deletePokemon: (req, res) => {
-    res.json({
-      success: true,
-      error: null,
-      response: "deletePokemon",
-    });
+    Pokemon.findOneAndDelete({ _id: req.params.id })
+      .then(() => {
+        res.json({
+          success: true,
+          error: null,
+        });
+      })
+      .catch(() => {
+        res
+          .status(constants.status.internalServerError)
+          .json({ success: false, error: constants.errors.generalError });
+      });
   },
 
   readPokemonList: (req, res) => {
