@@ -38,8 +38,6 @@ const pokemonValidator = (req, res, next) => {
       "string.max": constants.validations.imageUrlMaximumCharacters,
       "any.required": constants.validations.imageUrlRequired,
     }),
-
-    createdAt: joi.date(),
   });
   const validation = schema.validate(req.body, { abortEarly: false });
   if (!validation.error) {

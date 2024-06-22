@@ -1,4 +1,5 @@
 const constants = require("../constants");
+const Battle = require("../models/Battle");
 
 const battleControllers = {
   createBattle: (req, res) => {
