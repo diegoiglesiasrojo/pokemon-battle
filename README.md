@@ -1,3 +1,15 @@
+# Pokemon Battle - Backend
+
+## Dependencies:
+
+NodeJS v22.2.0 or later
+
+## Notes:
+
+- Authentication not required
+
+- Dotenv file required
+
 ## Installation:
 
 - Download this repository on your computer
@@ -11,6 +23,8 @@
 - Run the API with command npm start
 
 ## Version:
+
+- v0.3.0 | Created routes from pokemons and battles.
 
 - v0.2.0 | Created dotenv, database, constants and server files.
 
