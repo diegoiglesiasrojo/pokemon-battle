@@ -102,11 +102,19 @@ const pokemonControllers = {
   },
 
   readPokemonList: (req, res) => {
-    res.json({
-      success: true,
-      error: null,
-      response: "readPokemonList",
-    });
+    Pokemon.find()
+      .then((listOfPokemons) => {
+        res.json({
+          success: true,
+          error: null,
+          response: listOfPokemons,
+        });
+      })
+      .catch(() => {
+        res
+          .status(constants.status.internalServerError)
+          .json({ success: false, error: constants.errors.generalError });
+      });
   },
 };
 
