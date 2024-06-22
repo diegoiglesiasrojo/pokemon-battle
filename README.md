@@ -22,7 +22,92 @@ NodeJS v22.2.0 or later
 
 - Run the API with command npm start
 
-## Version:
+## Endpoints:
+
+#### Create Pokemon
+
+- POST method
+
+- localhost:4000/api/pokemon
+
+- Authentication not required
+
+- Body must be:
+  {}
+
+- Recieve:
+  {success: true, error: null, response: ""}
+
+#### Update Pokemon
+
+- PUT method
+
+- localhost:4000/api/pokemon
+
+- Authentication not required
+
+- Body must be:
+  {}
+
+- Recieve:
+  {success: true, error: null, response: ""}
+
+#### Delete Pokemon
+
+- DELETE method
+
+- localhost:4000/api/pokemon
+
+- Authentication not required
+
+- Body not required
+
+- Recieve:
+  {success: true, error: null, response: ""}
+
+#### Read Pokemon List
+
+- GET method
+
+- localhost:4000/api/pokemon
+
+- Authentication not required
+
+- Body not required
+
+- Recieve:
+  {success: true, error: null, response: ""}
+
+#### Create Battle
+
+- POST method
+
+- localhost:4000/api/battle
+
+- Authentication not required
+
+- Body must be:
+  {}
+
+- Recieve:
+  {success: true, error: null, response: ""}
+
+#### Read Battle List
+
+- GET method
+
+- localhost:4000/api/battle
+
+- Authentication not required
+
+- Body not required
+
+- Recieve:
+  {success: true, error: null, response: ""}
+
+## Versions:
+
+- v0.3.1 | Created controllers files.
 
 - v0.3.0 | Created routes from pokemons and battles.
 
