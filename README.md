@@ -33,7 +33,8 @@ NodeJS v22.2.0 or later
 - Authentication not required
 
 - Body must be:
-  {name: "Pikachu", attack: 4, defense: 3, hp: 3, speed: 6, type: "Electric", imageUrl: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png"}
+  {name: "Pikachu", attack: 4, defense: 3, hp: 3, speed: 6, type: "Electric", imageUrl: "https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png"
+  }
 
 - Recieve:
   {success: true, validationError: null, error: null, response: ""}
@@ -47,7 +48,7 @@ NodeJS v22.2.0 or later
 - Authentication not required
 
 - Body must be:
-  {}
+  {name: "Pikachu", attack: 4}
 
 - Recieve:
   {success: true, error: null, response: ""}
@@ -87,7 +88,7 @@ NodeJS v22.2.0 or later
 - Authentication not required
 
 - Body must be:
-  {}
+  {firstPokemon: "Pikachu", secondPokemon: "Eevee"}
 
 - Recieve:
   {success: true, error: null, response: ""}
@@ -106,6 +107,10 @@ NodeJS v22.2.0 or later
   {success: true, error: null, response: ""}
 
 ## Versions:
+
+- v0.5.1 | Created battle validator.
+
+- v0.5.0 | Created battle model.
 
 - v0.4.1 | Created pokemon validator.
 
