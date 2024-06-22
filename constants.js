@@ -2,6 +2,7 @@ const constants = {
   port: 4000,
   errors: {
     generalError: "Unexpected error. Please try later",
+    pokemonExist: "Pokemon already exist",
   },
   status: {
     internalServerError: 500,
