@@ -1,6 +1,6 @@
 {
   "name": "pokemon-battle-backend",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Pokemon Battle",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "joi": "^17.13.3",
     "mongoose": "^8.4.3",
     "nodemon": "^3.1.4"
   }

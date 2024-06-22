@@ -3,10 +3,11 @@ const router = express.Router();
 const constants = require("../constants");
 const pokemonControllers = require("../controllers/pokemonControllers.js");
 const battleControllers = require("../controllers/battleControllers.js");
+const pokemonValidator = require("../controllers/pokemonValidator.js");
 
 router
   .route(constants.routes.pokemon)
-  .post(pokemonControllers.createPokemon)
+  .post(pokemonValidator, pokemonControllers.createPokemon)
   .put(pokemonControllers.updatePokemon)
   .delete(pokemonControllers.deletePokemon)
   .get(pokemonControllers.readPokemonList);
