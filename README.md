@@ -108,6 +108,10 @@ NodeJS v22.2.0 or later
 
 ## Versions:
 
+- v0.7.1 | Created deletePokemon controller.
+
+- v0.7.0 | Created updatePokemon controller.
+
 - v0.6.0 | Created createPokemon controller.
 
 - v0.5.1 | Created battle validator.
