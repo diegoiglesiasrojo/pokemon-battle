@@ -1,9 +1,11 @@
 const constants = require("../constants");
+const Pokemon = require("../models/Pokemon");
 
 const pokemonControllers = {
   createPokemon: (req, res) => {
     res.json({
       success: true,
+      validationError: null,
       error: null,
       response: "createPokemon",
     });
