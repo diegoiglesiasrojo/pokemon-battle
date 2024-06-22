@@ -6,6 +6,10 @@ const constants = {
   status: {
     internalServerError: 500,
   },
+  routes: {
+    pokemon: "/pokemon",
+    battle: "/battle",
+  },
 };
 
 module.exports = constants;
