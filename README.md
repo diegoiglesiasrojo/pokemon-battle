@@ -108,6 +108,8 @@ NodeJS v22.2.0 or later
 
 ## Versions:
 
+- v0.8.0 | Created readPokemonList controller.
+
 - v0.7.1 | Created deletePokemon controller.
 
 - v0.7.0 | Created updatePokemon controller.
