@@ -107,6 +107,8 @@ NodeJS v22.2.0 or later
 
 ## Versions:
 
+- v0.4.0 | Created pokemon model.
+
 - v0.3.1 | Created controllers files.
 
 - v0.3.0 | Created routes from pokemons and battles.
