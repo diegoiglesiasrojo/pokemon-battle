@@ -1,6 +1,7 @@
 const constants = require("../constants");
 const Battle = require("../models/Battle");
 const Pokemon = require("../models/Pokemon");
+const battleCalculator = require("../services/battleCalculator.services");
 
 const battleControllers = {
   createBattle: (req, res) => {
@@ -20,9 +21,15 @@ const battleControllers = {
           Pokemon.findOne({ name: secondPokemonCapitalized })
             .then((secondPokemonObj) => {
               if (secondPokemonObj) {
+                const { turns, winner } = battleCalculator(
+                  firstPokemonObj,
+                  secondPokemonObj
+                );
                 const newBattle = new Battle({
                   firstPokemon: firstPokemonObj,
                   secondPokemon: secondPokemonObj,
+                  turns,
+                  winner,
                 });
                 newBattle
                   .save()

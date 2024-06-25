@@ -10,7 +10,7 @@ const battleSchema = new mongoose.Schema({
     required: true,
   },
   turns: { type: Array, default: [] },
-  result: { type: String, default: "" },
+  winner: { type: String, default: "" },
   createdAt: { type: Date, default: Date.now() },
 });
 
