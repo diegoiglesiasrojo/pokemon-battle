@@ -37,7 +37,7 @@ NodeJS v22.2.0 or later
   }
 
 - Recieve:
-  {success: true, validationError: null, error: null, response: ""}
+  {success: true, validationError: null, error: null}
 
 #### Update Pokemon
 
@@ -47,11 +47,11 @@ NodeJS v22.2.0 or later
 
 - Authentication not required
 
-- Body must be:
+- Body must have at least one property. Send only the properties to modify:
   {name: "Pikachu", attack: 4}
 
 - Recieve:
-  {success: true, error: null, response: ""}
+  {success: true, error: null}
 
 #### Delete Pokemon
 
@@ -64,7 +64,7 @@ NodeJS v22.2.0 or later
 - Body not required
 
 - Recieve:
-  {success: true, error: null, response: ""}
+  {success: true, error: null}
 
 #### Read Pokemon List
 
@@ -77,7 +77,7 @@ NodeJS v22.2.0 or later
 - Body not required
 
 - Recieve:
-  {success: true, error: null, response: ""}
+  {success: true, error: null, response: [array with all pokemons]}
 
 #### Create Battle
 
@@ -91,7 +91,7 @@ NodeJS v22.2.0 or later
   {firstPokemon: "Pikachu", secondPokemon: "Eevee"}
 
 - Recieve:
-  {success: true, error: null, response: ""}
+  {success: true, error: null, response: {firstPokemon: {complete pokemon object}, secondPokemon: {complete pokemon object}, turns: [array from turns], winner: "Pikachu", createdAt: "Date in UTC-0", \_id: "id from battle"}}
 
 #### Read Battle List
 
@@ -104,9 +104,11 @@ NodeJS v22.2.0 or later
 - Body not required
 
 - Recieve:
-  {success: true, error: null, response: ""}
+  {success: true, error: null, response: [array from battle objects]}
 
 ## Versions:
+
+- v1.0.0 | Created readBattleList controller.
 
 - v0.9.1 | Created battleCalculator service.
 
