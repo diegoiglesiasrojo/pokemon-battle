@@ -3,6 +3,7 @@ const constants = {
   errors: {
     generalError: "Unexpected error. Please try later",
     pokemonExist: "Pokemon already exist",
+    pokemonNotFound: "Pokemon not found",
   },
   status: {
     internalServerError: 500,

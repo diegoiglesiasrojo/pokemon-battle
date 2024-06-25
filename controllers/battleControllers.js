@@ -1,13 +1,74 @@
 const constants = require("../constants");
 const Battle = require("../models/Battle");
+const Pokemon = require("../models/Pokemon");
 
 const battleControllers = {
   createBattle: (req, res) => {
-    res.json({
-      success: true,
-      error: null,
-      response: "createBattle",
-    });
+    const { firstPokemon, secondPokemon } = req.body;
+
+    const firstPokemonCapitalized =
+      firstPokemon.toLowerCase().charAt(0).toUpperCase() +
+      firstPokemon.toLowerCase().slice(1);
+
+    const secondPokemonCapitalized =
+      secondPokemon.toLowerCase().charAt(0).toUpperCase() +
+      secondPokemon.toLowerCase().slice(1);
+
+    Pokemon.findOne({ name: firstPokemonCapitalized })
+      .then((firstPokemonObj) => {
+        if (firstPokemonObj) {
+          Pokemon.findOne({ name: secondPokemonCapitalized })
+            .then((secondPokemonObj) => {
+              if (secondPokemonObj) {
+                const newBattle = new Battle({
+                  firstPokemon: firstPokemonObj,
+                  secondPokemon: secondPokemonObj,
+                });
+                newBattle
+                  .save()
+                  .then(() => {
+                    res.json({
+                      success: true,
+                      error: null,
+                    });
+                  })
+                  .catch(() => {
+                    res.status(constants.status.internalServerError).json({
+                      success: false,
+                      validationError: null,
+                      error: constants.errors.generalError,
+                    });
+                  });
+              } else {
+                res.status(constants.status.internalServerError).json({
+                  success: false,
+                  validationError: null,
+                  error: constants.errors.pokemonNotFound,
+                });
+              }
+            })
+            .catch(() =>
+              res.status(constants.status.internalServerError).json({
+                success: false,
+                validationError: null,
+                error: constants.errors.generalError,
+              })
+            );
+        } else {
+          res.status(constants.status.internalServerError).json({
+            success: false,
+            validationError: null,
+            error: constants.errors.pokemonNotFound,
+          });
+        }
+      })
+      .catch(() =>
+        res.status(constants.status.internalServerError).json({
+          success: false,
+          validationError: null,
+          error: constants.errors.generalError,
+        })
+      );
   },
   readBattleList: (req, res) => {
     res.json({
