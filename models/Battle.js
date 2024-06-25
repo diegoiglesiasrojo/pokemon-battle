@@ -2,17 +2,15 @@ const mongoose = require("mongoose");
 
 const battleSchema = new mongoose.Schema({
   firstPokemon: {
-    type: mongoose.Types.ObjectId,
-    ref: "pokemon",
+    type: Object,
     required: true,
   },
   secondPokemon: {
-    type: mongoose.Types.ObjectId,
-    ref: "pokemon",
+    type: Object,
     required: true,
   },
   turns: { type: Array, default: [] },
-  result: { type: String, default: "" },
+  winner: { type: String, default: "" },
   createdAt: { type: Date, default: Date.now() },
 });
 

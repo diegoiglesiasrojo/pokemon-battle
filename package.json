@@ -1,6 +1,6 @@
 {
   "name": "pokemon-battle-backend",
-  "version": "0.8.0",
+  "version": "0.9.1",
   "description": "Pokemon Battle",
   "main": "index.js",
   "scripts": {

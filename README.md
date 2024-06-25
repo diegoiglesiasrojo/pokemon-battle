@@ -108,6 +108,10 @@ NodeJS v22.2.0 or later
 
 ## Versions:
 
+- v0.9.1 | Created battleCalculator service.
+
+- v0.9.0 | Created createBattle controller without turns and winner sistem.
+
 - v0.8.0 | Created readPokemonList controller.
 
 - v0.7.1 | Created deletePokemon controller.
