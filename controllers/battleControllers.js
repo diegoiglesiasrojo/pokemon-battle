@@ -37,6 +37,7 @@ const battleControllers = {
                     res.json({
                       success: true,
                       error: null,
+                      response: newBattle,
                     });
                   })
                   .catch(() => {
@@ -78,11 +79,19 @@ const battleControllers = {
       );
   },
   readBattleList: (req, res) => {
-    res.json({
-      success: true,
-      error: null,
-      response: "readBattleList",
-    });
+    Battle.find()
+      .then((listOfBattles) => {
+        res.json({
+          success: true,
+          error: null,
+          response: listOfBattles,
+        });
+      })
+      .catch(() => {
+        res
+          .status(constants.status.internalServerError)
+          .json({ success: false, error: constants.errors.generalError });
+      });
   },
 };
 
