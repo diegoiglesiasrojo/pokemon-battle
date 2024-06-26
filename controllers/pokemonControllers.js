@@ -116,6 +116,22 @@ const pokemonControllers = {
           .json({ success: false, error: constants.errors.generalError });
       });
   },
+
+  readPokemonById: (req, res) => {
+    Pokemon.findOne({ _id: req.params.id })
+      .then((response) => {
+        res.json({
+          success: true,
+          error: null,
+          response,
+        });
+      })
+      .catch(() => {
+        res
+          .status(constants.status.internalServerError)
+          .json({ success: false, error: constants.errors.generalError });
+      });
+  },
 };
 
 module.exports = pokemonControllers;
