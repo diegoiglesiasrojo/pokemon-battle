@@ -14,7 +14,8 @@ router
 router
   .route(constants.routes.pokemonId)
   .put(pokemonControllers.updatePokemon)
-  .delete(pokemonControllers.deletePokemon);
+  .delete(pokemonControllers.deletePokemon)
+  .get(pokemonControllers.readPokemonById);
 
 router
   .route(constants.routes.battle)
