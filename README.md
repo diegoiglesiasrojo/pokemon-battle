@@ -43,7 +43,7 @@ NodeJS v22.2.0 or later
 
 - PUT method
 
-- localhost:4000/api/pokemon
+- localhost:4000/api/pokemonid/id-from-pokemon
 
 - Authentication not required
 
@@ -57,7 +57,7 @@ NodeJS v22.2.0 or later
 
 - DELETE method
 
-- localhost:4000/api/pokemon
+- localhost:4000/api/pokemonid/id-from-pokemon
 
 - Authentication not required
 
@@ -78,6 +78,19 @@ NodeJS v22.2.0 or later
 
 - Recieve:
   {success: true, error: null, response: [array with all pokemons]}
+
+#### Read Pokemon by Id
+
+- GET method
+
+- localhost:4000/api/pokemonid/id-from-pokemon
+
+- Authentication not required
+
+- Body not required
+
+- Recieve:
+  {success: true, error: null, response: {complete pokemon object}}
 
 #### Create Battle
 
@@ -107,6 +120,8 @@ NodeJS v22.2.0 or later
   {success: true, error: null, response: [array from battle objects]}
 
 ## Versions:
+
+- v1.1.0 | Created readPokemonById controller.
 
 - v1.0.0 | Created readBattleList controller.
 
